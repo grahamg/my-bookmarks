@@ -1,0 +1,34 @@
+<h1>Bookmarks</h1>
+
+<form method="post" action="/">
+  <label for="title">Title:</label><br>
+  <input type="text" id="title" name="title"><br>
+  <br>
+  <label for="url">URL:</label><br>
+  <input type="text" id="url" name="url"><br>
+  <br>
+  <input type="submit" value="Add Bookmark">
+</form> 
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>URL</th>
+    <th>Actions</th>
+  </tr>
+  {{#bookmarks}}
+  <tr>
+    <td>{{title}}</td>
+    <td>{{url}}</td>
+    <td>
+      <form method="post" action="/{{_id}}/edit">
+        <input type="submit" value="Edit">
+      </form>
+      <form method="post" action="/{{_id}}/delete">
+        <input type="submit" value="Delete">
+      </form>
+    </td>
+  </tr>
+  {{/bookmarks}}
+</table>
+

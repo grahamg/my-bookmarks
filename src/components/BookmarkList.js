@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Bookmark from './Bookmark';
 
 function BookmarkList() {
@@ -6,6 +6,15 @@ function BookmarkList() {
     { id: 1, title: 'Google', url: 'https://www.google.com' },
     { id: 2, title: 'Facebook', url: 'https://www.facebook.com' },
   ]);
+
+	useEffect(() => {
+		async function fetchBookmarks() {
+      const response = await fetch('http://example.com/api/bookmarks');
+      const data = await response.json();
+      setBookmarks(data);
+    }
+    fetchBookmarks();
+	}, []);
 
   function handleAddBookmark(bookmark) {
     setBookmarks([...bookmarks, bookmark]);
