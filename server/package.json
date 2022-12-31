@@ -1,0 +1,27 @@
+{
+  "name": "my-api",
+  "version": "1.0.0",
+  "description": "A simple API for managing bookmarks.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.24"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "jest": "^26.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/user/my-api.git"
+  },
+  "author": "John Doe",
+  "license": "MIT",
+  "homepage": "https://github.com/user/my-api#readme"
+}
